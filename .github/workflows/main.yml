@@ -13,6 +13,6 @@ jobs:
       - name: GitHub Pages
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
           FOLDER: release/wwwroot
+          
