@@ -1,0 +1,22 @@
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches: [ master ]
+jobs:
+  deploy-to-github-pages:
+    # use ubuntu-latest-image to run steps on
+    runs-on: ubuntu-latest
+    permissions: 
+      id-token: write
+      contents: read
+      pages: write
+    steps:
+      - uses: actions/checkout@v3.3.0
+      - uses: actions/setup-dotnet@v3.0.3
+      - run: dotnet publish TigerGymWebUI/TigerGymWebUI.csproj -c Release -o release --nologo
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v1.0.7
+        with:
+          path: release          
+      - name: Deploy GitHub Pages site
+        uses: actions/deploy-pages@v1.2.4
