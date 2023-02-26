@@ -1,9 +1,9 @@
 {
-    "url": "https://www.mymeetscores.com/meet.pl?meetid=1000003247&pb=N&teamid=26508",
-    "name": "Women's 2023 Winter Beach Blast",
-    "start": "2023-01-13",
-    "end": "2023-01-15",
-    "scores": [
+  "url": "https://www.mymeetscores.com/meet.pl?meetid=1000003247&pb=N&teamid=26508",
+  "name": "Women's 2023 Winter Beach Blast",
+  "start": "2023-01-13",
+  "end": "2023-01-15",
+  "scores": [
     {
       "Name": "Rodriguez, Samantha",
       "Level": "XS",
@@ -544,5 +544,49 @@
       "AA": 32.7,
       "AARank": 17
     }
-    ]
+  ],
+  "team": [
+    {
+      "#": 1,
+      "Level": "XS",
+      "Vault": 28.8,
+      "VaultRank": 1,
+      "Bars": 28.75,
+      "BarsRank": "2T",
+      "Beam": 28.3,
+      "BeamRank": "4T",
+      "Floor": 27.3,
+      "FloorRank": 5,
+      "AA": 113.15,
+      "AARank": 3
+    },
+    {
+      "#": 2,
+      "Level": "XG",
+      "Vault": 27.225,
+      "VaultRank": 7,
+      "Bars": 28.4,
+      "BarsRank": "1T",
+      "Beam": 28.05,
+      "BeamRank": 4,
+      "Floor": 27.525,
+      "FloorRank": 8,
+      "AA": 111.2,
+      "AARank": 4
+    },
+    {
+      "#": 3,
+      "Level": "XP",
+      "Vault": 26.475,
+      "VaultRank": 11,
+      "Bars": 27,
+      "BarsRank": 3,
+      "Beam": 25.425,
+      "BeamRank": 11,
+      "Floor": 25.975,
+      "FloorRank": 11,
+      "AA": 104.875,
+      "AARank": 9
+    }
+  ]
 }
