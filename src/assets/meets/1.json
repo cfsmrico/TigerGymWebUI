@@ -727,7 +727,7 @@
   ],
   "team": [
     {
-      "#": 1,
+      "Order": 1,
       "Level": "XS",
       "Vault": 28.275,
       "VaultRank": 1,
@@ -741,7 +741,7 @@
       "AARank": 3
     },
     {
-      "#": 2,
+      "Order": 2,
       "Level": "XG",
       "Vault": 26.775,
       "VaultRank": 8,
@@ -755,7 +755,7 @@
       "AARank": 3
     },
     {
-      "#": 3,
+      "Order": 3,
       "Level": "XP",
       "Vault": 26.325,
       "VaultRank": 4,
@@ -769,7 +769,7 @@
       "AARank": 3
     },
     {
-      "#": 4,
+      "Order": 4,
       "Level": "XD",
       "Vault": 25.625,
       "VaultRank": 2,

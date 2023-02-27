@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
+import { MeetScore } from '../models/meet';
 import { TeamAggregateDataSource, TeamAggregateItem } from './team-aggregate-datasource';
 
 @Component({
@@ -12,11 +13,11 @@ import { TeamAggregateDataSource, TeamAggregateItem } from './team-aggregate-dat
 export class TeamAggregateComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatTable) table!: MatTable<TeamAggregateItem>;
+  @ViewChild(MatTable) table!: MatTable<MeetScore>;
   dataSource: TeamAggregateDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['Name', 'Level', 'Division', 'Vault', 'VaultRank', 'Bars', 'BarsRank', 'Beam', 'BeamRank', 'Floor', 'FloorRank', 'AA', 'AARank'];
 
   constructor() {
     this.dataSource = new TeamAggregateDataSource();

@@ -1,8 +1,8 @@
 export class MeetData {
   url: string = ''
   name: string = ''
-  start: Date = new Date
-  end: Date = new Date
+  start: string = ''
+  end: string = ''
   scores: MeetScore[] = []
   team: TeamScore[] = []
 }

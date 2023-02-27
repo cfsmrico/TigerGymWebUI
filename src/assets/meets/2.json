@@ -547,26 +547,26 @@
   ],
   "team": [
     {
-      "#": 1,
+      "Order": 1,
       "Level": "XS",
       "Vault": 28.8,
       "VaultRank": 1,
       "Bars": 28.75,
-      "BarsRank": "2T",
+      "BarsRank": 2,
       "Beam": 28.3,
-      "BeamRank": "4T",
+      "BeamRank": 4,
       "Floor": 27.3,
       "FloorRank": 5,
       "AA": 113.15,
       "AARank": 3
     },
     {
-      "#": 2,
+      "Order": 2,
       "Level": "XG",
       "Vault": 27.225,
       "VaultRank": 7,
       "Bars": 28.4,
-      "BarsRank": "1T",
+      "BarsRank": 1,
       "Beam": 28.05,
       "BeamRank": 4,
       "Floor": 27.525,
@@ -575,7 +575,7 @@
       "AARank": 4
     },
     {
-      "#": 3,
+      "Order": 3,
       "Level": "XP",
       "Vault": 26.475,
       "VaultRank": 11,
