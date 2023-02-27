@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SharedService } from './services/shared-service';
+import { GlobalDataService } from './services/global-data-service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +14,7 @@ export class AppComponent {
     console.log('app component constructing...')
     this.readJson()
     this.buildAggregateModels()
-    SharedService.AggregateItem = 'some shared string here'
+    GlobalDataService.AggregateItem = 'some shared string here'
   }
 
   readJson() {

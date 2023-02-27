@@ -1,6 +1,7 @@
 export class MeetData {
   url: string = ''
   name: string = ''
+  city: string = ''
   start: string = ''
   end: string = ''
   scores: MeetScore[] = []

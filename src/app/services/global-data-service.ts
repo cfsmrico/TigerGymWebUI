@@ -1,3 +1,3 @@
-export abstract class SharedService {
+export abstract class GlobalDataService {
   public static AggregateItem : string = ''
 }
