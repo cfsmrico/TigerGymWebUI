@@ -4,6 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { MeetScore } from '../models/meet';
 import { TeamAggregateDataSource, TeamAggregateItem } from './team-aggregate-datasource';
+import { SharedService } from '../services/shared-service';
 
 @Component({
   selector: 'app-team-aggregate',
@@ -21,6 +22,7 @@ export class TeamAggregateComponent implements AfterViewInit {
 
   constructor() {
     this.dataSource = new TeamAggregateDataSource();
+    console.log(SharedService.AggregateItem)
   }
 
   ngAfterViewInit(): void {
