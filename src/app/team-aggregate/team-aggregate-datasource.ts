@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
+import { MeetData, MeetScore, TeamScore } from '../models/meet';
 
 // TODO: Replace this with your own data model type
 export interface TeamAggregateItem {
