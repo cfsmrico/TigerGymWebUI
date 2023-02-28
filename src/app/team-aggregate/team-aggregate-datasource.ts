@@ -7,6 +7,7 @@ import { MeetData, MeetScore, TeamScore } from '../models/meet';
 import * as Meet1 from '../../assets/meets/1.json'
 import * as Meet2 from '../../assets/meets/2.json'
 import * as Meet3 from '../../assets/meets/3.json'
+import { GlobalDataService } from '../services/global-data-service';
 
 // TODO: Replace this with your own data model type
 export interface TeamAggregateItem {
@@ -47,13 +48,15 @@ export class TeamAggregateDataSource extends DataSource<MeetScore> {
   public Meet1Data : MeetData = Meet1;
   public Meet2Data : MeetData = Meet2;
   public Meet3Data : MeetData = Meet3;
-
   data: MeetScore[] = this.Meet1Data.scores;
   paginator: MatPaginator | undefined = undefined;
   sort: MatSort | undefined = undefined;
 
   constructor() {
     super();
+
+    let s = GlobalDataService.AggregateItem;
+    console.log(s);
   }
 
   /**

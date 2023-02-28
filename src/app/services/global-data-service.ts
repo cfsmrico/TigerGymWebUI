@@ -1,3 +1,3 @@
-export abstract class GlobalDataService {
-  public static AggregateItem : string = ''
+export class GlobalDataService {
+  public static AggregateItem : string = 'what is it fred?'
 }

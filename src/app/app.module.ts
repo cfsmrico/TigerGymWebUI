@@ -9,6 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { TeamAggregateComponent } from './team-aggregate/team-aggregate.component';
+import { GlobalDataService } from './services/global-data-service';
 
 const appRoutes: Routes = [
   { path: 'team', component: TeamAggregateComponent }
@@ -32,7 +33,7 @@ const appRoutes: Routes = [
     )
     // other imports here
   ],
-  providers: [],
+  providers: [GlobalDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
