@@ -1,3 +1,6 @@
+/**
+ *  Model meet scores
+ */
 export class MeetData {
   url: string = ''
   name: string = ''
