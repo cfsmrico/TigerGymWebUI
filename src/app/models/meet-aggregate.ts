@@ -3,12 +3,18 @@
  */
 export class MeetAggregate {
   Year: number
-  AthleteMeetSummaries : Map<string, Array<AthleteMeetSummary>> // k: name, v: AthleteMeetSummary
+  AthleteMeetSummaries : Map<string, AthleteMeetSummary> // k: name, v: AthleteMeetSummary
 }
 
 export class AthleteMeetSummary {
   Name: string = ''
   Level: string = ''
+  NumMeetsAttended: number = 0
+  AATotal: number = 0.0
+  VaultTotal: number = 0.0
+  BarsTotal: number = 0.0
+  BeamTotal: number = 0.0
+  FloorTotal: number = 0.0
   AAAvg: number = 0.0
   BestAA: number = 0.0
   BestVault: number = 0.0

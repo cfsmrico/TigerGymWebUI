@@ -49,6 +49,7 @@ export class TeamAggregateDataSource extends DataSource<MeetScore> {
   constructor() {
     super();
     this.data = MeetDataService.Meets[0].scores;
+    MeetDataService.BuildMeetDataAggregates();
   }
 
   /**
