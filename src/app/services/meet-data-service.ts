@@ -187,5 +187,8 @@ export class MeetDataService {
 
       MeetDataService.MeetAggregate.AthleteMeetSummaries.set(aName, summary);
     });
+
+    var allAthleteSummaries : Array<AthleteMeetSummary> = Array.from(summary.values());
+    console.log('Success!');
   }
 }

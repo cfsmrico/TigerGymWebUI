@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 import { MeetData, MeetScore, TeamScore } from '../models/meet';
 import { MeetDataService } from '../services/meet-data-service';
+import { AthleteMeetSummary, MeetAggregate } from '../models/meet-aggregate';
 
 // TODO: Replace this with your own data model type
 export interface TeamAggregateItem {
@@ -50,6 +51,10 @@ export class TeamAggregateDataSource extends DataSource<MeetScore> {
     super();
     this.data = MeetDataService.Meets[0].scores;
     MeetDataService.BuildMeetDataAggregates();
+    var summary = MeetDataService.MeetAggregate.AthleteMeetSummaries; // this is populated nicely
+    var allAthleteSummaries : Array<AthleteMeetSummary> = Array.from(summary.values());
+
+    console.log('success!');
   }
 
   /**
