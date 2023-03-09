@@ -105,6 +105,14 @@ export class TeamAggregateDataSource extends DataSource<AthleteMeetSummary> {
       const isAsc = this.sort?.direction === 'asc';
       switch (this.sort?.active) {
         case 'Name': return compare(a.Name, b.Name, isAsc);
+        case 'Level': return compare(a.Level, b.Level, isAsc);
+        case 'AAAvg': return compare(a.AAAvg, b.AAAvg, isAsc);
+        case 'BestAA': return compare(a.BestAA, b.BestAA, isAsc);
+        case 'BestVault': return compare(a.BestVault, b.BestVault, isAsc);
+        case 'BestBars': return compare(a.BestBars, b.BestBars, isAsc);
+        case 'BestBeam': return compare(a.BestBeam, b.BestBeam, isAsc);
+        case 'BestFloor': return compare(a.BestFloor, b.BestFloor, isAsc);
+        case 'NumPlacements': return compare(a.NumPlacements, b.NumPlacements, isAsc);
         default: return 0;
       }
     });
