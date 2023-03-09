@@ -42,19 +42,16 @@ const EXAMPLE_DATA: TeamAggregateItem[] = [
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
-export class TeamAggregateDataSource extends DataSource<MeetScore> {
-  data: MeetScore[] | undefined = undefined;
+export class TeamAggregateDataSource extends DataSource<AthleteMeetSummary> {
+  data: AthleteMeetSummary[] | undefined = undefined;
   paginator: MatPaginator | undefined = undefined;
   sort: MatSort | undefined = undefined;
 
   constructor() {
     super();
-    this.data = MeetDataService.Meets[0].scores;
     MeetDataService.BuildMeetDataAggregates();
-    var summary = MeetDataService.MeetAggregate.AthleteMeetSummaries; // this is populated nicely
-    var allAthleteSummaries : Array<AthleteMeetSummary> = Array.from(summary.values());
-
-    console.log('success!');
+    var allAthleteSummaries = MeetDataService.AthleteMeetSummary;
+    this.data = allAthleteSummaries;
   }
 
   /**
@@ -62,7 +59,7 @@ export class TeamAggregateDataSource extends DataSource<MeetScore> {
    * the returned stream emits new items.
    * @returns A stream of the items to be rendered.
    */
-  connect(): Observable<MeetScore[]> {
+  connect(): Observable<AthleteMeetSummary[]> {
     if (this.paginator && this.sort) {
       // Combine everything that affects the rendered data into one update
       // stream for the data-table to consume.
@@ -86,7 +83,7 @@ export class TeamAggregateDataSource extends DataSource<MeetScore> {
    * Paginate the data (client-side). If you're using server-side pagination,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getPagedData(data: MeetScore[]): MeetScore[] {
+  private getPagedData(data: AthleteMeetSummary[]): AthleteMeetSummary[] {
     if (this.paginator) {
       const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
       return data.splice(startIndex, this.paginator.pageSize);
@@ -99,7 +96,7 @@ export class TeamAggregateDataSource extends DataSource<MeetScore> {
    * Sort the data (client-side). If you're using server-side sorting,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getSortedData(data: MeetScore[]): MeetScore[] {
+  private getSortedData(data: AthleteMeetSummary[]): AthleteMeetSummary[] {
     if (!this.sort || !this.sort.active || this.sort.direction === '') {
       return data;
     }

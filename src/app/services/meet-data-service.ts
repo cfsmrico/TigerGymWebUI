@@ -12,10 +12,11 @@ import * as _ from "lodash";
 export class MeetDataService {
   static readonly Meets : Array<MeetData> = [Meet1, Meet2, Meet3, Meet4]
   static MeetAggregate : MeetAggregate = new MeetAggregate()
+  static AthleteMeetSummary: Array<AthleteMeetSummary>
 
   // populate SummaryMeetDataAggregate
   static BuildMeetDataAggregates() {
-    MeetDataService.MeetAggregate.Year = 2023;
+  MeetDataService.MeetAggregate.Year = 2023;
 
     // build athlete roster
     var roster = {};
@@ -188,7 +189,6 @@ export class MeetDataService {
       MeetDataService.MeetAggregate.AthleteMeetSummaries.set(aName, summary);
     });
 
-    var allAthleteSummaries : Array<AthleteMeetSummary> = Array.from(summary.values());
-    console.log('Success!');
+    MeetDataService.AthleteMeetSummary = Array.from(MeetDataService.MeetAggregate.AthleteMeetSummaries.values());
   }
 }
