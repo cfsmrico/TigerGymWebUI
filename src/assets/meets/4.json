@@ -697,6 +697,61 @@
     }
   ],
   "team": [
-
+    {
+      "Order": 1,
+      "Level": "XS",
+      "Vault": 29.375,
+      "VaultRank": 2,
+      "Bars": 29.075,
+      "BarsRank": 3,
+      "Beam": 28.650,
+      "BeamRank": 2,
+      "Floor": 28.525,
+      "FloorRank": 3,
+      "AA": 115.625,
+      "AARank": 2
+    },
+    {
+      "Order": 2,
+      "Level": "XG",
+      "Vault": 27.400,
+      "VaultRank": 5,
+      "Bars": 29.125,
+      "BarsRank": 1,
+      "Beam": 27.800,
+      "BeamRank": 5,
+      "Floor": 28.375,
+      "FloorRank": 4,
+      "AA": 112.700,
+      "AARank": 3
+    },
+    {
+      "Order": 3,
+      "Level": "XP",
+      "Vault": 25.300,
+      "VaultRank": 6,
+      "Bars": 26.575,
+      "BarsRank": 5,
+      "Beam": 26.850,
+      "BeamRank": 6,
+      "Floor": 27.575,
+      "FloorRank": 6,
+      "AA": 106.300,
+      "AARank": 6
+    },
+    {
+      "Order": 4,
+      "Level": "XD",
+      "Vault": 17.800,
+      "VaultRank": 6,
+      "Bars": 17.875,
+      "BarsRank": 6,
+      "Beam": 16.300,
+      "BeamRank": 6,
+      "Floor": 18.400,
+      "FloorRank": 6,
+      "AA": 70.375,
+      "AARank": 6
+    }
   ]
 }
