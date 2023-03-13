@@ -11,6 +11,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { TeamAggregateComponent } from './team-aggregate/team-aggregate.component';
 import { MeetDataService } from './services/meet-data-service';
+import { TeamScoresComponent } from './team-scores/team-scores.component';
 
 const appRoutes: Routes = [
   { path: 'team', component: TeamAggregateComponent }
@@ -19,7 +20,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    TeamAggregateComponent
+    TeamAggregateComponent,
+    TeamScoresComponent
   ],
   imports: [
     BrowserModule,
