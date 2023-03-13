@@ -1,1 +1,56 @@
-<p>team-scores works!</p>
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+    <!-- Name Column -->
+    <ng-container matColumnDef="Name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+      <td mat-cell *matCellDef="let row">{{row.Name}}</td>
+    </ng-container>
+
+    <!-- Level Column -->
+    <ng-container matColumnDef="Level">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Level</th>
+      <td mat-cell *matCellDef="let row">{{row.Level}}</td>
+    </ng-container>
+
+    <!-- BestAA Column -->
+    <ng-container matColumnDef="BestAA">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Best AA</th>
+      <td mat-cell *matCellDef="let row">{{row.BestAA}}</td>
+    </ng-container>
+
+    <!-- BestVault Column -->
+    <ng-container matColumnDef="BestVault">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Best Vault</th>
+      <td mat-cell *matCellDef="let row">{{row.BestVault}}</td>
+    </ng-container>
+
+    <!-- BestBars Column -->
+    <ng-container matColumnDef="BestBars">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Best Bars</th>
+      <td mat-cell *matCellDef="let row">{{row.BestBars}}</td>
+    </ng-container>
+
+    <!-- BestBeam Column -->
+    <ng-container matColumnDef="BestBeam">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Best Beam</th>
+      <td mat-cell *matCellDef="let row">{{row.BestBeam}}</td>
+    </ng-container>
+
+    <!-- BestFloor Column -->
+    <ng-container matColumnDef="BestFloor">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Best Floor</th>
+      <td mat-cell *matCellDef="let row">{{row.BestFloor}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource.data.length"
+      [pageIndex]="0"
+      [pageSize]="20"
+      [pageSizeOptions]="[10, 20, 50]"
+      aria-label="Select page">
+  </mat-paginator>
+</div>
