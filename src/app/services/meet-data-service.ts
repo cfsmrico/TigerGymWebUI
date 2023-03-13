@@ -5,7 +5,6 @@ import * as Meet2 from '../../assets/meets/2.json';
 import * as Meet3 from '../../assets/meets/3.json';
 import * as Meet4 from '../../assets/meets/4.json';
 import { AthleteMeetSummary, MeetAggregate } from '../models/meet-aggregate';
-import * as _ from "lodash";
 
 /**
  *  Provides meet data
@@ -32,7 +31,7 @@ export class MeetDataService {
       });
     });
 
-    var aNames = _.keys(roster);
+    var aNames = Object.keys(roster);
     MeetDataService.MeetAggregate.AthleteMeetSummaries = new Map<string, AthleteMeetSummary>();
 
     // build profile for each athlete
