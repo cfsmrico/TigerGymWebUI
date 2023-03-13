@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTableModule } from '@angular/material/table';
+import { MatToolbar, MatToolbarModule} from '@angular/material/toolbar';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { RouterModule, Routes } from '@angular/router';
@@ -25,6 +26,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MatSlideToggleModule,
     MatTableModule,
+    MatToolbarModule,
     MatPaginatorModule,
     MatSortModule,
     RouterModule.forRoot(
