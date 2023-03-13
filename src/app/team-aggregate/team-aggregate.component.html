@@ -14,43 +14,43 @@
 
     <!-- AAAvg Column -->
     <ng-container matColumnDef="AAAvg">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>AAAvg</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>AA Avg</th>
       <td mat-cell *matCellDef="let row">{{row.AAAvg}}</td>
     </ng-container>
 
     <!-- BestAA Column -->
     <ng-container matColumnDef="BestAA">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>BestAA</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Best AA</th>
       <td mat-cell *matCellDef="let row">{{row.BestAA}}</td>
     </ng-container>
 
     <!-- BestVault Column -->
     <ng-container matColumnDef="BestVault">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>BestVault</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Best Vault</th>
       <td mat-cell *matCellDef="let row">{{row.BestVault}}</td>
     </ng-container>
 
     <!-- BestBars Column -->
     <ng-container matColumnDef="BestBars">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>BestBars</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Best Bars</th>
       <td mat-cell *matCellDef="let row">{{row.BestBars}}</td>
     </ng-container>
 
     <!-- BestBeam Column -->
     <ng-container matColumnDef="BestBeam">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>BestBeam</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Best Beam</th>
       <td mat-cell *matCellDef="let row">{{row.BestBeam}}</td>
     </ng-container>
 
     <!-- BestFloor Column -->
     <ng-container matColumnDef="BestFloor">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>BestFloor</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Best Floor</th>
       <td mat-cell *matCellDef="let row">{{row.BestFloor}}</td>
     </ng-container>
 
     <!-- NumPlacements Column -->
     <ng-container matColumnDef="NumPlacements">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>NumPlacements</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Placements</th>
       <td mat-cell *matCellDef="let row">{{row.NumPlacements}}</td>
     </ng-container>
 
@@ -61,8 +61,8 @@
   <mat-paginator #paginator
       [length]="dataSource.data.length"
       [pageIndex]="0"
-      [pageSize]="10"
-      [pageSizeOptions]="[5, 10, 20]"
+      [pageSize]="20"
+      [pageSizeOptions]="[10, 20, 50]"
       aria-label="Select page">
   </mat-paginator>
 </div>
