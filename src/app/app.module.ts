@@ -14,7 +14,8 @@ import { MeetDataService } from './services/meet-data-service';
 import { TeamScoresComponent } from './team-scores/team-scores.component';
 
 const appRoutes: Routes = [
-  { path: 'team', component: TeamAggregateComponent }
+  { path: 'team', component: TeamAggregateComponent },
+  { path: 'teamScores', component: TeamScoresComponent }
 ];
 
 @NgModule({
