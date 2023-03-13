@@ -1,5 +1,5 @@
 import { MeetData } from '../models/meet';
-import { TeamScoreSummary } from '../models/team-score-summary';
+import { TeamAggregate, TeamScoreSummary } from '../models/team-score-summary';
 import * as Meet1 from '../../assets/meets/1.json';
 import * as Meet2 from '../../assets/meets/2.json';
 import * as Meet3 from '../../assets/meets/3.json';
@@ -12,6 +12,7 @@ import { AthleteMeetSummary, MeetAggregate } from '../models/meet-aggregate';
 export class MeetDataService {
   static readonly Meets : Array<MeetData> = [Meet1, Meet2, Meet3, Meet4]
   static MeetAggregate : MeetAggregate = new MeetAggregate()
+  static TeamAggregate : TeamAggregate = new TeamAggregate()
   static AthleteMeetSummary: Array<AthleteMeetSummary>
   static TeamScoresSummary: Array<TeamScoreSummary>
 
@@ -195,6 +196,9 @@ export class MeetDataService {
 
   // populate TeamScoresSummary
   static BuildTeamScoresSummary() {
+    MeetDataService.TeamAggregate.TeamScoreSummaries = new Map<number, TeamScoreSummary>();
+    MeetDataService.TeamAggregate.Year = 2023;
+
     MeetDataService.Meets.forEach(meet => {
       meet.team.forEach(score => {
         var t = new TeamScoreSummary();
@@ -212,7 +216,11 @@ export class MeetDataService {
         t.Order = score.Order;
         t.Vault = score.Vault;
         t.VaultRank = score.VaultRank;
+        MeetDataService.TeamAggregate.TeamScoreSummaries.set(MeetDataService.TeamAggregate.Count, t);
+        MeetDataService.TeamAggregate.Count += 1
       });
+
+      MeetDataService.TeamScoresSummary = Array.from(MeetDataService.TeamAggregate.TeamScoreSummaries.values());
     });
   }
 }

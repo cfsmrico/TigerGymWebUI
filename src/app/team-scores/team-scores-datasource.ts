@@ -5,22 +5,23 @@ import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 import { MeetDataService } from '../services/meet-data-service';
 import { AthleteMeetSummary } from '../models/meet-aggregate';
+import { TeamScoreSummary } from '../models/team-score-summary';
 
 /**
  * Data source for the TeamScores view. This class should
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
-export class TeamScoresDataSource extends DataSource<AthleteMeetSummary> {
-  data: AthleteMeetSummary[] | undefined = undefined;
+export class TeamScoresDataSource extends DataSource<TeamScoreSummary> {
+  data: TeamScoreSummary[] | undefined = undefined;
   paginator: MatPaginator | undefined = undefined;
   sort: MatSort | undefined = undefined;
 
   constructor() {
     super();
-    MeetDataService.BuildMeetDataAggregates();
-    var allAthleteSummaries = MeetDataService.AthleteMeetSummary;
-    this.data = allAthleteSummaries;
+    MeetDataService.BuildTeamScoresSummary();
+    var allTeamSummaries = MeetDataService.TeamScoresSummary;
+    this.data = allTeamSummaries;
   }
 
   /**
@@ -28,7 +29,7 @@ export class TeamScoresDataSource extends DataSource<AthleteMeetSummary> {
    * the returned stream emits new items.
    * @returns A stream of the items to be rendered.
    */
-  connect(): Observable<AthleteMeetSummary[]> {
+  connect(): Observable<TeamScoreSummary[]> {
     if (this.paginator && this.sort) {
       // Combine everything that affects the rendered data into one update
       // stream for the data-table to consume.
@@ -52,7 +53,7 @@ export class TeamScoresDataSource extends DataSource<AthleteMeetSummary> {
    * Paginate the data (client-side). If you're using server-side pagination,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getPagedData(data: AthleteMeetSummary[]): AthleteMeetSummary[] {
+  private getPagedData(data: TeamScoreSummary[]): TeamScoreSummary[] {
     if (this.paginator) {
       const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
       return data.splice(startIndex, this.paginator.pageSize);
@@ -65,7 +66,7 @@ export class TeamScoresDataSource extends DataSource<AthleteMeetSummary> {
    * Sort the data (client-side). If you're using server-side sorting,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getSortedData(data: AthleteMeetSummary[]): AthleteMeetSummary[] {
+  private getSortedData(data: TeamScoreSummary[]): TeamScoreSummary[] {
     if (!this.sort || !this.sort.active || this.sort.direction === '') {
       return data;
     }
@@ -75,11 +76,11 @@ export class TeamScoresDataSource extends DataSource<AthleteMeetSummary> {
       switch (this.sort?.active) {
         case 'Name': return compare(a.Name, b.Name, isAsc);
         case 'Level': return compare(a.Level, b.Level, isAsc);
-        case 'BestAA': return compare(a.BestAA, b.BestAA, isAsc);
-        case 'BestVault': return compare(a.BestVault, b.BestVault, isAsc);
-        case 'BestBars': return compare(a.BestBars, b.BestBars, isAsc);
-        case 'BestBeam': return compare(a.BestBeam, b.BestBeam, isAsc);
-        case 'BestFloor': return compare(a.BestFloor, b.BestFloor, isAsc);
+        case 'AA': return compare(a.AA, b.AA, isAsc);
+        case 'Vault': return compare(a.Vault, b.Vault, isAsc);
+        case 'Bars': return compare(a.Bars, b.Bars, isAsc);
+        case 'Beam': return compare(a.Beam, b.Beam, isAsc);
+        case 'Floor': return compare(a.Floor, b.Floor, isAsc);
         default: return 0;
       }
     });
