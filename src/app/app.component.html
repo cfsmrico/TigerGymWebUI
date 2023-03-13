@@ -301,6 +301,8 @@
   />
   <span>Xcel Team Family</span>
   <div class="spacer"></div>
+  <a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Individual Summary</a>
+  <a routerLink="/teamScores" routerLinkActive="active" ariaCurrentWhenActive="page">Team Scores</a>
 </mat-toolbar>
 
 <!-- Original Toolbar
@@ -342,13 +344,14 @@
   <!-- Resources -->
   <h2>Acrotex GT 2023 Gymnastics Scores</h2>
   <router-outlet></router-outlet>
-  <app-team-aggregate></app-team-aggregate>
 
   <!-- Footer -->
   <footer>
-    <div>
+    <!--
+      <div>
       <mat-slide-toggle>Toggle me!</mat-slide-toggle>
-    </div>
+      </div>
+    -->
   </footer>
 
   <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">

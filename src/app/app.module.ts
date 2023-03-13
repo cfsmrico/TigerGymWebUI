@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTableModule } from '@angular/material/table';
-import { MatToolbar, MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { RouterModule, Routes } from '@angular/router';
@@ -14,7 +14,7 @@ import { MeetDataService } from './services/meet-data-service';
 import { TeamScoresComponent } from './team-scores/team-scores.component';
 
 const appRoutes: Routes = [
-  { path: 'team', component: TeamAggregateComponent },
+  { path: '', component: TeamAggregateComponent },
   { path: 'teamScores', component: TeamScoresComponent }
 ];
 
