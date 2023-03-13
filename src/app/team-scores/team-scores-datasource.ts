@@ -7,11 +7,11 @@ import { MeetDataService } from '../services/meet-data-service';
 import { AthleteMeetSummary } from '../models/meet-aggregate';
 
 /**
- * Data source for the TeamAggregate view. This class should
+ * Data source for the TeamScores view. This class should
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
-export class TeamAggregateDataSource extends DataSource<AthleteMeetSummary> {
+export class TeamScoresDataSource extends DataSource<AthleteMeetSummary> {
   data: AthleteMeetSummary[] | undefined = undefined;
   paginator: MatPaginator | undefined = undefined;
   sort: MatSort | undefined = undefined;

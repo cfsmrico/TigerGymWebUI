@@ -2,10 +2,8 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
-import { MeetScore } from '../models/meet';
 import { AthleteMeetSummary } from '../models/meet-aggregate';
-import { TeamAggregateDataSource, TeamAggregateItem } from './team-aggregate-datasource';
-import { MeetDataService } from '../services/meet-data-service';
+import { TeamAggregateDataSource } from './team-aggregate-datasource';
 
 @Component({
   selector: 'app-team-aggregate',
