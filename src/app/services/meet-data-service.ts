@@ -1,4 +1,5 @@
-import { MeetData, MeetScore, TeamScore } from '../models/meet';
+import { MeetData } from '../models/meet';
+import { TeamScoreSummary } from '../models/team-score-summary';
 import * as Meet1 from '../../assets/meets/1.json';
 import * as Meet2 from '../../assets/meets/2.json';
 import * as Meet3 from '../../assets/meets/3.json';
@@ -13,6 +14,7 @@ export class MeetDataService {
   static readonly Meets : Array<MeetData> = [Meet1, Meet2, Meet3, Meet4]
   static MeetAggregate : MeetAggregate = new MeetAggregate()
   static AthleteMeetSummary: Array<AthleteMeetSummary>
+  static TeamScoresSummary: Array<TeamScoreSummary>
 
   // populate SummaryMeetDataAggregate
   static BuildMeetDataAggregates() {
@@ -190,5 +192,28 @@ export class MeetDataService {
     });
 
     MeetDataService.AthleteMeetSummary = Array.from(MeetDataService.MeetAggregate.AthleteMeetSummaries.values());
+  }
+
+  // populate TeamScoresSummary
+  static BuildTeamScoresSummary() {
+    MeetDataService.Meets.forEach(meet => {
+      meet.team.forEach(score => {
+        var t = new TeamScoreSummary();
+        t.Name = meet.city;
+        t.Date = meet.end;
+        t.AA = score.AA;
+        t.AARank = score.AARank;
+        t.Bars = score.Bars;
+        t.BarsRank = score.BarsRank;
+        t.Beam = score.Beam;
+        t.BeamRank = score.BeamRank;
+        t.Floor = score.Floor;
+        t.FloorRank = score.FloorRank;
+        t.Level = score.Level;
+        t.Order = score.Order;
+        t.Vault = score.Vault;
+        t.VaultRank = score.VaultRank;
+      });
+    });
   }
 }
